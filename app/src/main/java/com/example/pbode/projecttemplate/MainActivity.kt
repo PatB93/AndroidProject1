@@ -4,7 +4,7 @@ import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.pbode.projecttemplate.databinding.ActivityMainBinding
-import viewmodel.MainActivityViewModel
+import userintent.MainActivityIntent
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,6 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        binding.viewModel = MainActivityViewModel()
+        binding.viewModel = MainActivityIntent()
     }
 }
