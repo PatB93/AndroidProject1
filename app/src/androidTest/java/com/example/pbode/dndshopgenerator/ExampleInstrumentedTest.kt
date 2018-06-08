@@ -1,4 +1,4 @@
-package com.example.pbode.projecttemplate
+package com.example.pbode.dndshopgenerator
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

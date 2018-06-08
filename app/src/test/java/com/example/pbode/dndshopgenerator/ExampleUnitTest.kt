@@ -1,4 +1,4 @@
-package com.example.pbode.projecttemplate
+package com.example.pbode.dndshopgenerator
 
 import org.junit.Test
 
