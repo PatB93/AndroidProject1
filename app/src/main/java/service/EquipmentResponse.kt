@@ -3,7 +3,7 @@ package service
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
-class EquipmentRespons {
+class EquipmentResponse {
     @SerializedName("name")
     val itemName: String = ""
 
