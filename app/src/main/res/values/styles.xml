@@ -10,9 +10,17 @@
     </style>
 
     <style name="TitleBold" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">#222222</item>
+        <item name="android:textColor">#A0A0A0</item>
         <item name="android:textSize">24dp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="SubHeadBold" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#A0A0A0</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
 </resources>

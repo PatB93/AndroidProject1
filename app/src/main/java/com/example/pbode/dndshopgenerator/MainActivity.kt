@@ -2,21 +2,23 @@ package com.example.pbode.dndshopgenerator
 
 import android.arch.lifecycle.LifecycleOwner
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.pbode.dndshopgenerator.databinding.ActivityMainBinding
-import state.MainActivityState
-import userintent.MainActivityIntent
+import state.MainState
+import userintent.MainIntent
+import viewevent.ViewEvent
 
-class MainActivity : LifecycleOwner, AppCompatActivity() {
+class MainActivity : LifecycleOwner, BaseActivity() {
 
-    val mainActivityIntent = MainActivityIntent()
+    val mainIntent = MainIntent()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        binding.userIntent = mainActivityIntent
-        binding.state = MainActivityState
-        lifecycle.addObserver(mainActivityIntent)
+        binding.userIntent = mainIntent
+        binding.state = MainState
+        lifecycle.addObserver(mainIntent)
+
+        ViewEvent.startActivity.subscribe({startActivity(it)})
     }
 }

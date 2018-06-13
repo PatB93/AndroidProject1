@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface MainService {
     @GET("/api/equipment/")
-    fun getEquipment(): Call<EquipmentResponse>
+    fun getEquipment(): Call<List<EquipmentResponse>>
 
     @GET("/api/equipment/{id}")
     fun getItem(id: Int): Call<ItemResponse>
