@@ -1,4 +1,9 @@
 package service;
 
-class Properties {
+import java.util.ArrayList;
+
+public class Properties {
+    public WeaponProperties properties;
+
+    public Properties() {}
 }

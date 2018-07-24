@@ -1,4 +1,7 @@
 package service;
 
-class WeaponRange {
+public class WeaponRange {
+    public int reach_length;
+
+    public WeaponRange() {}
 }
