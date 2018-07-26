@@ -8,6 +8,8 @@
         <variable
             name="userIntent"
             type="userintent.ShopIntent" />
+
+        <import type="android.support.v7.widget.RecyclerView"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -37,13 +39,13 @@
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
+            android:adapter="@{userIntent.shopAdapter}"
+            customLayoutManager="@{RecyclerView.VERTICAL}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-        </android.support.v7.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline_left"

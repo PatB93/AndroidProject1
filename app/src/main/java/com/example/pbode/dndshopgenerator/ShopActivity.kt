@@ -10,6 +10,9 @@ class ShopActivity : LifecycleOwner, BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivityShopBinding>(this, R.layout.activity_shop)
-        binding.userIntent = ShopIntent()
+        val shopIntent = ShopIntent()
+        binding.userIntent = shopIntent
+        binding.executePendingBindings()
+        lifecycle.addObserver(shopIntent)
     }
 }
