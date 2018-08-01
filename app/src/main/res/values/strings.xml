@@ -3,4 +3,5 @@
     <string name="equipment_button">Weapons &amp; Armor Shop</string>
     <string name="alchemy_button">Alchemy Shop</string>
     <string name="general_button">General Store</string>
+    <string name="quantity_format" formatted="false">%d</string>
 </resources>
