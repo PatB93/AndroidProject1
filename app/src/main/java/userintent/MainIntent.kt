@@ -18,7 +18,7 @@ class MainIntent : LifecycleObserver {
     }
 
     private fun getStuff() {
-        print(database.item.subscribe{ Log.d("asdf", it.name)}.dispose())
+        print(database.getItem(1).subscribe{ Log.d("asdf", it.name)}.dispose())
     }
 
     fun onBackPressed() {
