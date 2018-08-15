@@ -1,18 +1,31 @@
 package userintent
+
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.OnLifecycleEvent
 import recyclerview.ShopAdapter
+import service.FirebaseProvider
 
-class ShopIntent: LifecycleObserver {
+class ShopIntent : LifecycleObserver {
+    private val database = FirebaseProvider()
     private val intentList = ArrayList<ShopItemIntent>()
-    val shopAdapter: ShopAdapter
-        get() = ShopAdapter(intentList)
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE) fun initializeList() {
-        for(i in 1..15) {
-            intentList.add(ShopItemIntent("shop item $i"))
-        }
+    private val shopAdapter = ShopAdapter(intentList)
+
+    fun getShopAdapter() : ShopAdapter {
+        return shopAdapter
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    fun initializeList() {
+        intentList.add(ShopItemIntent("PLEASE FUCKING WORK"))
+        database.equipment.flatMapIterable { it }
+                .subscribe {
+                    intentList.add(ShopItemIntent(it.name))
+                    updateView()
+                }
         shopAdapter.notifyDataSetChanged()
     }
+
+    fun updateView() {shopAdapter.notifyDataSetChanged()}
 }
